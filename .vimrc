@@ -8,6 +8,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'preservim/nerdtree'
 
+" for i3 config
+Plugin 'PotatoesMaster/i3-vim-syntax', { 'for': 'i3' }
+
 call vundle#end()            
 filetype plugin indent on    
 
@@ -41,19 +44,29 @@ set undodir=~/.vim/undo-dir
 set undofile
 
 syntax on
-colorscheme molokai
 set wildmenu
 set tabstop=4
 set softtabstop=4
 set autoindent
 set cursorline
 set hlsearch		" highlight matches
-set ic
+set ic				" ignore case
 set smartcase
 set backspace=indent,eol,start " with this line backspace works
+set background=dark
+
+" switch colorschemes according to file type
+autocmd BufEnter *    colorscheme badwolf
+autocmd BufEnter *.md colorscheme molokai
 
 " switch off arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+" beatiful vimdiff
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
