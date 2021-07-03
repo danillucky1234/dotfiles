@@ -1,0 +1,18 @@
+[/]
+audible-bell=false
+background-color='rgb(27,29,30)'
+bold-color='#d6d6dbdbe5e5'
+bold-color-same-as-fg=true
+bold-is-bright=false
+cursor-background-color='rgb(187,187,187)'
+cursor-colors-set=true
+cursor-foreground-color='rgb(27,29,30)'
+font='Monospace 13'
+foreground-color='rgb(187,187,187)'
+highlight-background-color='rgb(239,255,194)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(0,0,0)'
+palette=['rgb(31,31,31)', 'rgb(248,17,24)', 'rgb(35,226,152)', 'rgb(236,186,15)', 'rgb(42,132,210)', 'rgb(78,90,183)', 'rgb(16,129,214)', 'rgb(187,187,187)', 'rgb(214,219,229)', 'rgb(222,53,46)', 'rgb(29,211,97)', 'rgb(243,189,9)', 'rgb(16,129,214)', 'rgb(83,80,185)', 'rgb(15,125,219)', 'rgb(255,255,255)']
+use-system-font=false
+use-theme-colors=false
+visible-name='Softi'
