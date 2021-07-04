@@ -1,19 +1,25 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-" set the runtime path to include Vundle and initialize
+
+" Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 
+" Plugin manager
 Plugin 'VundleVim/Vundle.vim'
+
+" Online Markdown preview in browser
 Plugin 'iamcco/markdown-preview.nvim'
+
+" Tree Explorer for vim
 Plugin 'preservim/nerdtree'
 
-" for i3 config
+" Enable syntax highlighting in i3 config
 Plugin 'PotatoesMaster/i3-vim-syntax', { 'for': 'i3' }
 
 call vundle#end()            
-filetype plugin indent on    
-
+filetype plugin indent on    " re-enable filetype
 
 " All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
 " /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
@@ -27,45 +33,71 @@ filetype plugin indent on
 " properly set to work with the Vim-related packages.
 runtime! archlinux.vim
 
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim80/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
+" Appearance & feels
+syntax on
+set background=dark				" Notify the vim that background color of terminal is dark
+set title						" Set the title of the window to titlestring
+set nu rnu						" Show the line number relative to the current line
+set ruler						" Show the line and column number of cursor position
+set cursorline					" Highlight the current line where the cursor is
+set cmdheight=1					" Make sure the cmd height is always one
+set laststatus=1				" Keep the statusbar only when you have more than 2 windows
+" set colorcolumn=80			" Highlight column after 80 width (following the legacy)
+set splitbelow					" Horizontal split will put the new window below the current
+set splitright					" Vertical split will put the new window to the right
+set updatetime=750				" Having longer updatetime (default 4s) leads to noticeable delays
+set complete-=i					" Scan current and included files while performing autocomplete
+set backspace=indent,eol,start	" Go to earlier line where the cursor is positioned at eol, sol and indent
 
-" do not load defaults if ~/.vimrc is missing
-"let skip_defaults_vim=1
-set nu rnu
+" Backup & history
+set undofile					" Maintain undo history between sessions
+set undodir=~/.vim/undo-dir		" Override the default undo directory to ~/.vim/undo-dir
+set undolevels=10000			" Maximum number of changes that can be undone
+set noswapfile					" No swapfiles when new buffers are loaded
+set wildmenu                    " Invoke a horizontal and unobtrusive little menu
+
+" Set the backup directory
 if !isdirectory($HOME."/.vim")
     call mkdir($HOME."/.vim", "", 0770)
 endif
 if !isdirectory($HOME."/.vim/undo-dir")
     call mkdir($HOME."/.vim/undo-dir", "", 0700)
 endif
-set undodir=~/.vim/undo-dir
-set undofile
 
-syntax on
-set wildmenu
-set tabstop=4
-set softtabstop=4
-set autoindent
-set cursorline
-set hlsearch		" highlight matches
-set ic				" ignore case
-set smartcase
-set backspace=indent,eol,start " with this line backspace works
-set background=dark
+" Spaces, Tabs & Indent
+set tabstop=4					" Number of visual <Space> per <Tab>
+set softtabstop=4				" Number of spaces per tab while performing editing operations
+set autoindent					" Copy indent from current line when staring a new line
+set expandtab					" Use the appropriate number of spaces to insert a Tab
+set smarttab					" Insert blanks according to shiftwidth, or tabstop in front of lines
 
-" switch colorschemes according to file type
+" Search
+set nohlsearch					" Stop the highligting after the search is completed
+set incsearch					" While searching, show where the pattern, as it was typed so far, matches
+set ignorecase					" Ignore case in search patterns
+set smartcase					" Override ignorecase option if the pattern contains any uppercase letters
+
+" PLUGIN: NERDTree - Tree Explorer
+let g:NERDTreeShowHidden = 1				" Toggle this setting by pressing I in NERDTree window
+let g:NERDTreeAutoDeleteBuffer = 1          " Delete the NERDTree buffer when tree is closed
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = ['__pycache__']      " Things to hide in Explorer
+
+" Window Resizing, change the width of windows using {+, -}
+nnoremap + :vertical resize +2<CR>
+nnoremap - :vertical resize -2<CR>
+
+" Switch colorschemes according to file type
 autocmd BufEnter *    colorscheme badwolf
 autocmd BufEnter *.md colorscheme molokai
 
-" switch off arrow keys
+" Switch off arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" beatiful vimdiff
+" Make vimdiff beautiful
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
