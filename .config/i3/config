@@ -44,7 +44,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec gnome-terminal
+#bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -139,7 +140,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="discord"]            $ws8
 assign [class="TelegramDesktop"]    $ws9
-assign [class="firefox"]            $w0
+assign [class="firefox"]            $ws10
 assign [class="Signal"]             $ws7
 
 # reload the configuration file
