@@ -18,6 +18,9 @@ Plugin 'preservim/nerdtree'
 " Enable syntax highlighting in i3 config
 Plugin 'PotatoesMaster/i3-vim-syntax', { 'for': 'i3' }
 
+" Add colors to the files edited in vim
+Plugin 'chrisbra/Colorizer'
+
 call vundle#end()            
 filetype plugin indent on    " re-enable filetype
 
@@ -82,6 +85,11 @@ let g:NERDTreeShowHidden = 1				" Toggle this setting by pressing I in NERDTree 
 let g:NERDTreeAutoDeleteBuffer = 1          " Delete the NERDTree buffer when tree is closed
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = ['__pycache__']      " Things to hide in Explorer
+
+" PLUGIN: Colorizer - To color colornames and codes
+let g:colorizer_auto_filetype = 'css,html'          " Autoload Colorizer in files with specified filetypes
+let g:colorizer_skip_comments = 1                   " Don't highlight codes in comments
+let g:colorizer_colornames = 0                      " Don't highlight colornames
 
 " Window Resizing, change the width of windows using {+, -}
 nnoremap + :vertical resize +2<CR>
