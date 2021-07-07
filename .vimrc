@@ -69,10 +69,9 @@ endif
 
 " Spaces, Tabs & Indent
 set tabstop=4					" Number of visual <Space> per <Tab>
-set softtabstop=4				" Number of spaces per tab while performing editing operations
+set softtabstop=0 noexpandtab	" Number of spaces per tab while performing editing operations
 set autoindent					" Copy indent from current line when staring a new line
-set expandtab					" Use the appropriate number of spaces to insert a Tab
-set smarttab					" Insert blanks according to shiftwidth, or tabstop in front of lines
+set shiftwidth=4				" Number of charaters in 1 tab
 
 " Search
 set nohlsearch					" Stop the highligting after the search is completed
