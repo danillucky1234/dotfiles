@@ -87,16 +87,21 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Terminals " 
+#set $ws1 "1: Terminals " 
+set $ws1 "1" 
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7: Signal "
-set $ws8 "8: Discord "
-set $ws9 "9: Telegram "
-set $ws10 "10: Firefox " 
+#set $ws7 "7: Signal "
+set $ws7 "7"
+#set $ws8 "8: Discord "
+set $ws8 "8"
+#set $ws9 "9: Telegram "
+set $ws9 "9"
+#set $ws10 "10: Firefox " 
+set $ws10 "10" 
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -177,11 +182,11 @@ client.urgent				$urgent-bg-color	$urgent-bg-color	$text-color				#00ff00
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks
-		tray_output primary
-		position top
-}
+#bar {
+#        status_command i3blocks
+#		tray_output primary
+#		position top
+#}
 
 # save monitors position after logout
 exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1930x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal
@@ -204,3 +209,6 @@ bindsym $mod+Tab exec ~/.local/bin/chlayout
 
 # move tab to another display
 bindsym $mod+m exec i3-msg move workspace to output left
+
+# Polybar launch script
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

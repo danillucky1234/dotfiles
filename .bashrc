@@ -144,8 +144,9 @@ ex ()
 # Custom aliases
 alias la="ls -a"
 alias ll="ls -al"
-alias cal="cal -m" # week starts from monday
-alias mplayer="mplayer -ao alsa:device=hw=0.0" # it solved problem: "audio device got stuck"
+alias cal="cal -m" 								# week starts from monday
+alias mplayer="mplayer -ao alsa:device=hw=0.0" 	# it solved problem: "audio device got stuck"
+alias music="mocp"								# Open music player
 
 # add colours to man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'

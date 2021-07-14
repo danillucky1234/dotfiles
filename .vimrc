@@ -90,6 +90,10 @@ let g:colorizer_auto_filetype = 'css,html'          " Autoload Colorizer in file
 let g:colorizer_skip_comments = 1                   " Don't highlight codes in comments
 let g:colorizer_colornames = 0                      " Don't highlight colornames
 
+
+" PLUGIN: MarkdownPreview
+let g:mkdp_auto_start = 1							" Auto start preview when open markdown file
+
 " Window Resizing, change the width of windows using {+, -}
 nnoremap + :vertical resize +2<CR>
 nnoremap - :vertical resize -2<CR>
