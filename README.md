@@ -38,9 +38,9 @@ Screenshots [below](#screenshots)
 
 <a name="screenshots"></a>
 #### Screenshots
-- kitty + polybar + vim
-![rice](https://github.com/danillucky1234/dorfiles/blob/main/screenshots/rice.png)
-- polybar
-![polybar](https://github.com/danillucky1234/dorfiles/blob/main/screenshots/polybar.png)
-- i3blocks
-![i3blocks](https://github.com/danillucky1234/dorfiles/blob/main/screenshots/i3blocks.png)
+- polybar  
+![polybar](https://github.com/danillucky1234/dotfiles/blob/main/screenshots/polybar.png)  
+- i3blocks  
+![i3blocks](https://github.com/danillucky1234/dotfiles/blob/main/screenshots/i3blocks.png)  
+- kitty + polybar + vim  
+![rice](https://github.com/danillucky1234/dotfiles/blob/main/screenshots/rice.png)  
