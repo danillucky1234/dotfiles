@@ -21,6 +21,18 @@ Plugin 'PotatoesMaster/i3-vim-syntax', { 'for': 'i3' }
 " Add colors to the files edited in vim
 Plugin 'chrisbra/Colorizer'
 
+" Highlight other uses of the current word under the cursor
+Plugin 'RRethy/vim-illuminate'
+
+" Emmet plugin for html/css
+Plugin 'mattn/emmet-vim'
+
+" Latex preview plugin
+Plugin 'conornewton/vim-latex-preview'
+
+" Comfortable commant large piece of code
+Plugin 'tpope/vim-commentary'
+
 call vundle#end()            
 filetype plugin indent on    " re-enable filetype
 
@@ -45,7 +57,7 @@ set ruler						" Show the line and column number of cursor position
 set cursorline					" Highlight the current line where the cursor is
 set cmdheight=1					" Make sure the cmd height is always one
 set laststatus=1				" Keep the statusbar only when you have more than 2 windows
-" set colorcolumn=80			" Highlight column after 80 width (following the legacy)
+set colorcolumn=80				" Highlight column after 80 width (following the legacy)
 set splitbelow					" Horizontal split will put the new window below the current
 set splitright					" Vertical split will put the new window to the right
 set updatetime=750				" Having longer updatetime (default 4s) leads to noticeable delays
@@ -93,6 +105,11 @@ let g:colorizer_colornames = 0                      " Don't highlight colornames
 
 " PLUGIN: MarkdownPreview
 let g:mkdp_auto_start = 1							" Auto start preview when open markdown file
+let g:mkdp_auto_close = 1
+
+" PLUGIN: Emmet
+let g:user_emmet_install_global = 0					" Enable just for html/css
+autocmd FileType html,css EmmetInstall
 
 " Window Resizing, change the width of windows using {+, -}
 nnoremap + :vertical resize +2<CR>
@@ -119,3 +136,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Ctags additional modification
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
