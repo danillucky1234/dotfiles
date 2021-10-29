@@ -1,0 +1,18 @@
+[user]
+	name = danillucky1234
+	email = danilyurzhenko2607@gmail.com
+	signingkey = E79EE47A8F40C9F1
+[core]
+	autocrlf = input
+	safecrlf = warn
+	quotepath = off
+	editor = nvim
+[gpg]
+	program = gpg2
+[color "diff"]
+	frag = cyan
+	new = green
+	commit = yellow
+[alias]
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	st = status
