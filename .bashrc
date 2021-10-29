@@ -114,7 +114,8 @@ shopt -s expand_aliases
 shopt -s histappend
 
 # Change histsize
-set HISTFILESIZE=3000
+HISTFILESIZE=3000
+HISTSIZE=3000
 
 #
 # # ex - archive extractor
@@ -146,7 +147,7 @@ alias la="ls -a"
 alias ll="ls -al"
 alias cal="cal -m" 								# week starts from monday
 alias mplayer="mplayer -ao alsa:device=hw=0.0" 	# it solved problem: "audio device got stuck"
-alias music="mocp"								# Open music player
+alias vim="nvim"
 
 # add colours to man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -156,3 +157,6 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# Change default editor
+export EDITOR=/usr/bin/nvim

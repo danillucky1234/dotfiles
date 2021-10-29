@@ -127,10 +127,10 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+assign [class="Signal"]             $ws7
 assign [class="discord"]            $ws8
 assign [class="TelegramDesktop"]    $ws9
 assign [class="firefox"]            $ws10
-assign [class="Signal"]             $ws7
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -195,14 +195,8 @@ exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1930x0 --rota
 bindsym $mod+x exec ~/.local/bin/lock.sh
 bindsym $mod+Shift+x exec i3lock --color "#000000"
 
-# screenshot the capture
-bindsym ctrl+Print exec flameshot gui
-
-# screenshot the full screen
-bindsym Print exec flameshot screen -c
-
 # set wallpaper
-exec_always feh --bg-scale ~/Pictures/wallpapers/0018.jpg
+exec_always feh --bg-scale ~/Pictures/good_pictures/planets/space.jpg
 
 # switching between keyboard layouts
 bindsym $mod+Tab exec ~/.local/bin/chlayout
@@ -212,3 +206,15 @@ bindsym $mod+m exec i3-msg move workspace to output left
 
 # Polybar launch script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# increase screen brightness
+bindsym XF86MonBrightnessUp 	exec ~/.local/bin/changeBrightness.sh -inc 1
+# decrease screen brightness
+bindsym XF86MonBrightnessDown 	exec ~/.local/bin/changeBrightness.sh -dec 1
+
+# Copy the screenshot to the clipboard
+bindsym Print exec ~/.local/bin/screenshot.sh -c
+# Copy the screenshot to the clipboard and save it to the ~/Pictures/ directory
+bindsym Control+Print exec ~/.local/bin/screenshot.sh -c -p ~/Pictures/
+
+bindsym $mod+Print exec ~/.local/bin/screenCurrentWindow.sh

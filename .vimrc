@@ -33,6 +33,9 @@ Plugin 'conornewton/vim-latex-preview'
 " Comfortable commant large piece of code
 Plugin 'tpope/vim-commentary'
 
+" You complete me
+Plugin 'ycm-core/YouCompleteMe'
+
 call vundle#end()            
 filetype plugin indent on    " re-enable filetype
 
@@ -139,3 +142,6 @@ nnoremap <C-H> <C-W><C-H>
 
 " Ctags additional modification
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
