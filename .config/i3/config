@@ -218,3 +218,6 @@ bindsym Print exec ~/.local/bin/screenshot.sh -c
 bindsym Control+Print exec ~/.local/bin/screenshot.sh -c -p ~/Pictures/
 
 bindsym $mod+Print exec ~/.local/bin/screenCurrentWindow.sh
+
+# close telegram processes
+bindsym $mod+Shift+bracketright exec pkill telegram

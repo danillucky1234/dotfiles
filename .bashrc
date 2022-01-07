@@ -144,10 +144,11 @@ ex ()
 
 # Custom aliases
 alias la="ls -a"
-alias ll="ls -al"
+alias ll="ls -alh"
 alias cal="cal -m" 								# week starts from monday
 alias mplayer="mplayer -ao alsa:device=hw=0.0" 	# it solved problem: "audio device got stuck"
 alias vim="nvim"
+alias count="~/.local/bin/count"
 
 # add colours to man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
