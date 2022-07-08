@@ -33,8 +33,14 @@ Plugin 'conornewton/vim-latex-preview'
 " Comfortable commant large piece of code
 Plugin 'tpope/vim-commentary'
 
-" You complete me
-Plugin 'ycm-core/YouCompleteMe'
+" Surround text in tags, quotes, brackets, etc
+Plugin 'tpope/vim-surround'
+
+" Move few lines up-down at the same time
+Plugin 'matze/vim-move'
+
+" Multiple-files search
+Plugin 'wincent/ferret'
 
 call vundle#end()            
 filetype plugin indent on    " re-enable filetype
@@ -105,7 +111,6 @@ let g:colorizer_auto_filetype = 'css,html'          " Autoload Colorizer in file
 let g:colorizer_skip_comments = 1                   " Don't highlight codes in comments
 let g:colorizer_colornames = 0                      " Don't highlight colornames
 
-
 " PLUGIN: MarkdownPreview
 let g:mkdp_auto_start = 1							" Auto start preview when open markdown file
 let g:mkdp_auto_close = 1
@@ -142,6 +147,3 @@ nnoremap <C-H> <C-W><C-H>
 
 " Ctags additional modification
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
