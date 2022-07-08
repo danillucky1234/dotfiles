@@ -43,4 +43,4 @@ Screenshots [below](#screenshots)
 - i3blocks  
 ![i3blocks](https://github.com/danillucky1234/dotfiles/blob/main/screenshots/i3blocks.png)  
 - kitty + polybar + vim  
-![rice](https://github.com/danillucky1234/dotfiles/blob/main/screenshots/rice.png)  
+![rice](https://i.imgur.com/lDOKqvT.png)  
