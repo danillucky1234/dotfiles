@@ -1,0 +1,4 @@
+.vim/undo-dir
+.vim/bundle
+.vim/ftplugin
+.vim/.netrwhist

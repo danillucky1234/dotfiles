@@ -47,7 +47,7 @@ fi
 if [[ $clipboard -eq 1 ]]; then
 	# if copy to clipboard passsed to the program
 	if [[ -z "$path" ]]; then
-		path=$HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
+		path=$HOME/Pictures/`date +%Y-%m-%d_%H-%M-%S`.png
 		scrot $path
 		toDelete=1
 	fi
